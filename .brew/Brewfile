@@ -1,7 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
-
 brew "coreutils"
 brew "diff-so-fancy"
 brew "git"
@@ -9,7 +8,6 @@ brew "httpie"
 brew "mas"
 brew "tig"
 brew "tree"
-
 cask "alfred"
 cask "android-file-transfer"
 cask "appcleaner"
@@ -28,10 +26,11 @@ cask "postman"
 cask "slack"
 cask "spotify"
 cask "tableplus"
-cask 'telegram-desktop'
+cask "telegram-desktop"
 cask "vagrant"
+cask "virtualbox"
 cask "visual-studio-code"
-
+mas "1Password 7", id: 1333542190
 mas "Elmedia Video Player", id: 1044549675
 mas "iStat Menus", id: 1319778037
 mas "LINE", id: 539883307
