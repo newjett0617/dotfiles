@@ -1,0 +1,13 @@
+[user]
+	name = Jett
+	email = 
+
+[include]
+### include git core
+	path = ~/.gitconfig.d/git_core
+
+### include git alias
+	path = ~/.gitconfig.d/git_alias
+
+### include git color style
+	path = ~/.gitconfig.d/git_color

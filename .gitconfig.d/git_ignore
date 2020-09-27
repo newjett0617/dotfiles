@@ -1,0 +1,13 @@
+### macOS ###
+.DS_Store
+
+### PhpStorm ###
+.idea
+
+### Vim ###
+*~
+*.swp
+*.swo
+
+### vscode ###
+.vscode
