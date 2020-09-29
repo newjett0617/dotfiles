@@ -131,8 +131,9 @@ genpasswd () {
 }
 
 ### dotfiles
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 ### kubectl
 source <(kubectl completion zsh)
 
+alias kcd="kubectl config set-context $(kubectl config current-context) --namespace"
