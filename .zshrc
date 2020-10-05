@@ -130,6 +130,21 @@ genpasswd () {
     openssl rand -base64 30 | tr -d "=+/" | cut -c 1-16
 }
 
+### backup ###
+backup () {
+    set -e
+    D=".$(date +%Y%m%d).bak"
+    if [[ -f $1 ]]; then
+        cp $1{,${D}}
+        echo $1$D
+    elif [[ -d $1 ]]; then
+        cp -r $1{,${D}}
+        echo $1$D
+    else
+        echo "not regular file"
+    fi
+}
+
 ### dotfiles
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
