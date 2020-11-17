@@ -1,5 +1,8 @@
+tap "agrinman/tap"
+tap "drone/drone"
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-drivers"
 tap "homebrew/core"
 brew "coreutils"
 brew "diff-so-fancy"
@@ -11,19 +14,27 @@ brew "mas"
 brew "minikube"
 brew "tig"
 brew "tree"
+brew "wget"
+brew "agrinman/tap/tunnelto"
 cask "alfred"
 cask "android-file-transfer"
+cask "anki"
 cask "appcleaner"
+cask "caffeine"
 cask "calibre"
 cask "charles"
 cask "docker"
 cask "firefox"
 cask "goland"
 cask "google-chrome"
+cask "imageoptim"
 cask "iterm2"
 cask "keycastr"
 cask "lens"
+cask "logitech-options"
+cask "macs-fan-control"
 cask "notion"
+cask "obsidian"
 cask "paw"
 cask "phpstorm"
 cask "postman"
@@ -39,11 +50,15 @@ cask "telegram-desktop"
 cask "vagrant"
 cask "virtualbox"
 cask "visual-studio-code"
+cask "wireshark"
 mas "1Password 7", id: 1333542190
 mas "Elmedia Video Player", id: 1044549675
 mas "iStat Menus", id: 1319778037
+mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
 mas "Magnet", id: 441258766
 mas "Noizio", id: 928871589
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
 mas "Reeder", id: 1449412482
-
+mas "Snappy", id: 512617038
