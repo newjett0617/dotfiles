@@ -73,6 +73,7 @@ plugins=(
 	docker
 	docker-compose
 	git
+	httpie
 	kubectl
 	vagrant
 	z
