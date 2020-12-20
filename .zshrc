@@ -131,6 +131,9 @@ genpasswd () {
     openssl rand -base64 30 | tr -d "=+/" | cut -c 1-16
 }
 
+### http basic auth ###
+alias htpasswd="docker run --rm xmartlabs/htpasswd:latest"
+
 ### backup ###
 backup () {
     set -e
