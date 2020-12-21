@@ -3,6 +3,7 @@ tap "drone/drone"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
+tap "homebrew/cask-versions"
 tap "homebrew/core"
 brew "coreutils"
 brew "diff-so-fancy"
@@ -15,7 +16,10 @@ brew "minikube"
 brew "tig"
 brew "tree"
 brew "wget"
+brew "wrk"
+brew "youtube-dl"
 brew "agrinman/tap/tunnelto"
+cask "1password"
 cask "alfred"
 cask "android-file-transfer"
 cask "anki"
@@ -38,6 +42,7 @@ cask "obsidian"
 cask "paw"
 cask "phpstorm"
 cask "postman"
+cask "pycharm"
 cask "qlcolorcode"
 cask "qlimagesize"
 cask "qlmarkdown"
@@ -47,11 +52,12 @@ cask "slack"
 cask "spotify"
 cask "tableplus"
 cask "telegram-desktop"
+cask "tomighty"
 cask "vagrant"
 cask "virtualbox"
 cask "visual-studio-code"
 cask "wireshark"
-mas "1Password 7", id: 1333542190
+cask "zoomus"
 mas "Elmedia Video Player", id: 1044549675
 mas "iStat Menus", id: 1319778037
 mas "Keynote", id: 409183694
@@ -59,6 +65,8 @@ mas "LINE", id: 539883307
 mas "Magnet", id: 441258766
 mas "Noizio", id: 928871589
 mas "Numbers", id: 409203825
+mas "Outline", id: 1356178125
 mas "Pages", id: 409201541
 mas "Reeder", id: 1449412482
 mas "Snappy", id: 512617038
+mas "The Unarchiver", id: 425424353
