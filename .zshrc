@@ -111,7 +111,7 @@ export LANG=en_US.UTF-8
 # ================================= #
 
 ### get public ip
-alias ip="curl -H 'Cache-Control: no-cache' https://ifconfig.me/ip";
+alias ip="curl --ipv4 --silent --header 'Cache-Control: no-cache' https://ipinfo.io/ip";
 
 ### alias
 alias c="clear"
@@ -119,11 +119,11 @@ alias c="clear"
 ### docker ###
 #### clear exited containers ####
 dcclear () {
-    docker rm $(docker ps --quiet --filter "status=exited") --force
+    docker container rm $(docker container ls --filter='status=exited' --quiet) --force
 }
 #### clear untag images ####
 diclear () {
-    docker rmi $(docker images --quiet --filter "dangling=true") --force
+    docker image rm $(docker image ls --filter='dangling=true' --quiet) --force
 }
 
 ### generate password ###
@@ -133,6 +133,9 @@ genpasswd () {
 
 ### http basic auth ###
 alias htpasswd="docker run --rm xmartlabs/htpasswd:latest"
+
+### docker htop ###
+alias dhtop="docker run --rm --interactive --tty --pid host docker.io/frapsoft/htop:latest"
 
 ### backup ###
 backup () {
@@ -155,7 +158,12 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 ### kubectl
 source <(kubectl completion zsh)
 
+alias kcd="kubectl config set-context --current --namespace"
+
 ### kind
 source <(kind completion zsh)
 
-alias kcd="kubectl config set-context --current --namespace"
+### nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
