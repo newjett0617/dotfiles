@@ -13,6 +13,7 @@
 	### commit ###
 	ci = commit
 	cia = commit --amend
+	ciano = commit --amend --no-edit
 	cim = commit --message
 
 	### checkout ###

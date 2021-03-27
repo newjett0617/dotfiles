@@ -115,6 +115,7 @@ alias ip="curl --ipv4 --silent --header 'Cache-Control: no-cache' https://ipinfo
 
 ### alias
 alias c="clear"
+alias pbc="pbcopy"
 
 ### docker ###
 #### clear exited containers ####
@@ -155,6 +156,10 @@ backup () {
 ### dotfiles
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
+### git tmp
+alias gtmp="git add . && git cim 'using gtmp alias'"
+alias greset="git reset @~1"
+
 ### kubectl
 source <(kubectl completion zsh)
 
@@ -162,3 +167,6 @@ alias kcd="kubectl config set-context --current --namespace"
 
 ### kind
 source <(kind completion zsh)
+
+### aws
+alias aws="docker run --rm --interactive --tty --volume ~/.aws:/root/.aws docker.io/amazon/aws-cli:latest"
