@@ -15,7 +15,7 @@ fi
 
 SSH_CONFIG_PATH=$HOME/.ssh/config
 KEYS_PATH=$HOME/.ssh/keys
-KEY_TYPE=rsa
+KEY_TYPE=ed25519
 KEY_NAME=id_$KEY_TYPE
 
 ## create folder
