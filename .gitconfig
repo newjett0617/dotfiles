@@ -6,6 +6,9 @@
 ### include git core
 	path = ~/.gitconfig.d/git_core
 
+### include git init
+	path = ~/.gitconfig.d/git_init
+
 ### include git alias
 	path = ~/.gitconfig.d/git_alias
 
