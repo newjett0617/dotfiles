@@ -157,7 +157,7 @@ backup () {
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 ### git tmp
-alias gtmp="git add . && git cim 'using gtmp alias'"
+alias gtmp="git add . && git cim 'tmp: using gtmp alias'"
 alias greset="git reset @~1"
 
 ### kubectl
@@ -170,3 +170,9 @@ source <(kind completion zsh)
 
 ### aws
 alias aws="docker run --rm --interactive --tty --volume ~/.aws:/root/.aws docker.io/amazon/aws-cli:latest"
+
+### speedtest
+speedtest () {
+	curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
+}
+
