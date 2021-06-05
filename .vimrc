@@ -15,7 +15,6 @@ syntax enable
 "" highlight CursorLine cterm=bold
 "" highlight CursorLine cterm=underline, bold
 "" highlight CursorLine cterm=reverse
-
 highlight CursorLine cterm=none ctermbg=22 ctermfg=255
 
 " ref from
