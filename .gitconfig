@@ -14,3 +14,6 @@
 
 ### include git color style
 	path = ~/.gitconfig.d/git_color
+
+### include git pull
+	path = ~/.gitconfig.d/git_pull

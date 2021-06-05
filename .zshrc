@@ -70,12 +70,14 @@ ZSH_THEME="af-magic"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+	aws
 	docker
 	docker-compose
 	git
 	httpie
 	kubectl
 	vagrant
+	yarn
 	z
 )
 
@@ -167,9 +169,6 @@ alias kcd="kubectl config set-context --current --namespace"
 
 ### kind
 source <(kind completion zsh)
-
-### aws
-alias aws="docker run --rm --interactive --tty --volume ~/.aws:/root/.aws docker.io/amazon/aws-cli:latest"
 
 ### speedtest
 speedtest () {
