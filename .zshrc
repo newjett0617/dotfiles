@@ -134,6 +134,10 @@ genpasswd () {
     openssl rand -base64 30 | tr -d "=+/" | cut -c 1-16
 }
 
+pwgen () {
+	docker run --rm docker.io/newjett0617/pwgen:latest ${1:-24}
+}
+
 ### http basic auth ###
 alias htpasswd="docker run --rm xmartlabs/htpasswd:latest"
 
