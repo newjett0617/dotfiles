@@ -1,44 +1,49 @@
 #!/usr/bin/env bash
 
-## how to use it ?
-## for example:
-## 	./my-shell github
-## 
-## it will generate public/private key for github and it will append config to $HOME/.ssh/config
+#set -xueo pipefail;
 
-## -ne => Not equal to.
-## -z  => True if the length of string is zero.
-if [ $# -ne 1 ] && [ -z $1 ]; then
-	echo "No arguments";
-	exit 1;
+die () {
+  echo >&2 "$@";
+  exit 1;
+}
+
+HOST=$1
+
+## `$#` => number of parameters
+## `[ integer1 -gt integer2 ]` => integer1 > integer2
+## `[ -z string ]` => string.length = 0
+if [ "$#" -gt 1 ] || [ -z "${HOST}" ]; then
+  die "No arguments";
 fi
 
-SSH_CONFIG_PATH=$HOME/.ssh/config
-KEYS_PATH=$HOME/.ssh/keys
-KEY_TYPE=ed25519
-KEY_NAME=id_$KEY_TYPE
+SSH_CONFIG_PATH="${HOME}/.ssh/config"
+SSH_KEY_OUTPUT_PATH="${HOME}/.ssh/keys"
+SSH_KEY_OUTPUT_DIR="${SSH_KEY_OUTPUT_PATH}/${HOST}"
+SSH_KEY_TYPE="ed25519"
+#SSH_KEY_TYPE="rsa"
+SSH_KEY_BITS="4096"
+SSH_KEY_NAME="id_${SSH_KEY_TYPE}"
 
 ## create folder
-echo "Create folder \"$KEYS_PATH/$1\""
-mkdir -p $KEYS_PATH/$1;
+mkdir -p ${SSH_KEY_OUTPUT_DIR}
 
-### create rsa public/private key
+## create public/private key
 ssh-keygen \
-    -t $KEY_TYPE \
-    -b 4096 \
-    -C $1 \
-    -f $KEYS_PATH/$1/$KEY_NAME \
-    -N "" \
-    -q \
-;
+  -q \
+  -b ${SSH_KEY_BITS} \
+  -t ${SSH_KEY_TYPE} \
+  -N '' \
+  -C ${HOST} \
+  -f ${SSH_KEY_OUTPUT_DIR}/${SSH_KEY_NAME}\
+  ;
 
-## append config
-echo "Append basic config to \"$SSH_CONFIG_PATH\""
-cat << EOF >> $SSH_CONFIG_PATH
-Host $1
-	HostName $1
-	User user
-	Port 22
-	IdentityFile $KEYS_PATH/$1/$KEY_NAME
-	IdentitiesOnly yes
+# append config
+cat << EOF >> ${SSH_CONFIG_PATH}
+Host ${HOST}
+  HostName ${HOST}
+  User user
+  Port 22
+  IdentityFile ${SSH_KEY_OUTPUT_DIR}/${SSH_KEY_NAME}
+  IdentitiesOnly yes
+
 EOF
