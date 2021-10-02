@@ -77,8 +77,6 @@ plugins=(
 	httpie
 	kubectl
 	vagrant
-	yarn
-	z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -118,6 +116,7 @@ alias ip="curl --ipv4 --silent --header 'Cache-Control: no-cache' https://ipinfo
 ### alias
 alias c="clear"
 alias pbc="pbcopy"
+alias lanip="ifconfig en0 | grep 'inet' | tail -1 | cut -d ' ' -f 2"
 
 ### docker ###
 #### clear exited containers ####
@@ -179,3 +178,11 @@ speedtest () {
 	curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
 }
 
+### bat
+alias cat='bat'
+
+### fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+### krew
+export PATH="${PATH}:${HOME}/.krew/bin"
