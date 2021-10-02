@@ -1,19 +1,103 @@
+# git-user
 [user]
 	name = newjett0617
 	email = newjett0617@gmail.com
 
-[include]
-### include git core
-	path = ~/.gitconfig.d/git_core
+# git-core
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	ignorecase = false
 
-### include git init
-	path = ~/.gitconfig.d/git_init
+# git-init
+[init]
+	defaultBranch = main
 
-### include git alias
-	path = ~/.gitconfig.d/git_alias
+# git-aliases
+[alias]
+	### add ###
+	ad = add
+	adp = add --patch
 
-### include git color style
-	path = ~/.gitconfig.d/git_color
+	### branch ###
+	br = branch
+	bra = branch --all
+	brd = branch --delete
+	brD = branch --delete --force
+	brm = branch --move
 
-### include git pull
-	path = ~/.gitconfig.d/git_pull
+	### commit ###
+	ci = commit
+	cia = commit --amend
+	ciano = commit --amend --no-edit
+	cim = commit --message
+
+	### checkout ###
+	co = checkout
+	cod = checkout develop
+	com = checkout master
+	cos = checkout stage
+	cob = checkout -b
+	cop = checkout --patch
+
+	### cherry-pick ###
+	cp = cherry-pick
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
+
+	### diff ###
+	df = diff
+	dfc = diff --cached
+
+	### fetch ###
+	sync = fetch --prune
+
+	### log ###
+	l = log --oneline --graph
+	la = log --oneline --graph --all
+
+	### ls-files ###
+	ls = ls-files --exclude-standard --others
+	lsg = ls-files --ignored --exclude-standard --others
+
+	### pull ###
+	pl = pull
+
+	### push ###
+	ps = push
+	psf = push --force
+
+	### rebase ###
+	rb = rebase
+	rba = rebase --abort
+	rbc = rebase --continue
+	rbi = rebase --interactive
+
+	### shortlog ###
+	contributors = shortlog --summary --numbered
+
+	### status ###
+	st = status
+	ss = status --short
+
+	w = whatchanged
+
+# git-color
+[color]
+	ui = auto
+
+[color "branch"]
+	current = green reverse
+	local = green bold
+	remote = red bold
+
+[color "status"]
+	added = green bold
+	changed = red bold
+	untracked = cyan bold
+
+# git-pull
+[pull]
+	ff = only
+
