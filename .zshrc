@@ -95,6 +95,7 @@ export LANG=en_US.UTF-8
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -119,13 +120,14 @@ alias pbc="pbcopy"
 alias lanip="ifconfig en0 | grep 'inet' | tail -1 | cut -d ' ' -f 2"
 
 ### docker ###
-#### clear exited containers ####
 dcclear () {
     docker container rm $(docker container ls --filter='status=exited' --quiet) --force
 }
-#### clear untag images ####
 diclear () {
     docker image rm $(docker image ls --filter='dangling=true' --quiet) --force
+}
+dvclear () {
+    docker volume rm $(docker volume ls --filter='dangling=true' --quiet) --force
 }
 
 ### generate password ###
